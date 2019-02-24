@@ -28,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		05FACF9FE12AB3F589223248 /* CloudTagView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CloudTagView.podspec; path = ../CloudTagView.podspec; sourceTree = "<group>"; };
+		05FACF9FE12AB3F589223248 /* CloudTagView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CloudTagView.podspec; path = ../CloudTagView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		212030D49094ACDB1B2FD7DC /* Pods_CloudTagView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloudTagView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		494B1D0D068D7B1B363F4F63 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		58FC3668B5A7A9F42485528C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
