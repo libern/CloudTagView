@@ -132,6 +132,12 @@ open class TagView: UIView {
         }
     }
     
+    open var cornerRadius: CGFloat? = nil {
+        didSet {
+            layoutSubviews()
+        }
+    }
+    
     override open var backgroundColor: UIColor? {
         didSet {
             layoutSubviews()
@@ -240,7 +246,13 @@ open class TagView: UIView {
         dismissView.frame = CGRect(x: 0, y: 0, width: dismissLeft, height: tagHeight)
         
         frame = CGRect(x: Int(frame.origin.x), y: Int(frame.origin.y), width: tagWidth, height: tagHeight)
-        layer.cornerRadius = bounds.height/2
+        
+//        layer.cornerRadius = bounds.height/2
+        if let cornerRadius = self.cornerRadius {
+            layer.cornerRadius = cornerRadius
+        } else {
+            layer.cornerRadius = bounds.height/2
+        }
     }
     
     // MARK: Actions
