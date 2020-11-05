@@ -1,5 +1,5 @@
 PODS:
-  - CloudTagView (3.0.0)
+  - CloudTagView (3.0.1)
 
 DEPENDENCIES:
   - CloudTagView (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CloudTagView: 82e2e9334b783b7c944d52700fad61349b9db96a
+  CloudTagView: bbd58662af91ca2699b8ced1c8d5f5a1497b5194
 
 PODFILE CHECKSUM: 512109757708a150104b5ec33c3e11e875f6eb8a
 
-COCOAPODS: 1.6.0
+COCOAPODS: 1.10.0
