@@ -20,9 +20,7 @@ open class CloudTagView: UIView {
     open var resizeToFit = true
 
     open private(set) var tagViewWidth: CGFloat = 0
-    open var tagViewHeight: CGFloat {
-        return frame.size.height
-    }
+    open private(set) var tagViewHeight: CGFloat = 0
 
     open var tags = [TagView]() {
         didSet {
@@ -62,6 +60,8 @@ open class CloudTagView: UIView {
         var xAxis = padding
         var yAxis = padding
         var maxHeight = 0
+        tagViewWidth = 0
+        tagViewHeight = 0
 
         for (index, tag) in tags.enumerated() {
 
@@ -77,7 +77,7 @@ open class CloudTagView: UIView {
 
                 if expectedWidth > Int(frame.width) {
                     if (CGFloat(expectedWidth) > tagViewWidth) {
-                        tagViewWidth = CGFloat(xAxis)
+                        tagViewWidth = CGFloat(expectedWidth)
                     }
                     yAxis += maxHeight + padding
                     xAxis = padding
@@ -97,8 +97,9 @@ open class CloudTagView: UIView {
             xAxis += Int(tag.frame.width) + padding
         }
 
+        tagViewHeight = CGFloat(yAxis + maxHeight + padding)
         if resizeToFit {
-            frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.size.width, height: CGFloat(yAxis + maxHeight + padding))
+            frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: tagViewWidth, height: tagViewHeight)
         }
     }
 
