@@ -69,9 +69,9 @@ open class CloudTagView: UIView {
 
             tag.delegate = self
 
-
+            let tagFrameHeight = tag.frame.height
             if index == 0 {
-                maxHeight = Int(tag.frame.height)
+                maxHeight = Int(tagFrameHeight)
             } else {
                 let expectedWidth = xAxis + Int(tag.frame.width) + padding
 
@@ -81,13 +81,13 @@ open class CloudTagView: UIView {
                     }
                     yAxis += maxHeight + padding
                     xAxis = padding
-                    maxHeight = Int(tag.frame.height)
+                    maxHeight = Int(tagFrameHeight)
                 } else if (CGFloat(expectedWidth) > tagViewWidth) {
                     tagViewWidth = CGFloat(expectedWidth)
                 }
 
-                if Int(tag.frame.height) > maxHeight {
-                    maxHeight = Int(tag.frame.height)
+                if Int(tagFrameHeight) > maxHeight {
+                    maxHeight = Int(tagFrameHeight)
                 }
             }
 
@@ -100,6 +100,7 @@ open class CloudTagView: UIView {
         tagViewHeight = CGFloat(yAxis + maxHeight + padding)
         if resizeToFit {
             frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: tagViewWidth, height: tagViewHeight)
+            invalidateIntrinsicContentSize()
         }
     }
 
