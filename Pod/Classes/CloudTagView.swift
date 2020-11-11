@@ -18,6 +18,7 @@ open class CloudTagView: UIView {
 
     open var removeOnDismiss = true
     open var resizeToFit = true
+    open var resizeToContentWidth = false
 
     open private(set) var tagViewWidth: CGFloat = 0
     open private(set) var tagViewHeight: CGFloat = 0
@@ -99,8 +100,11 @@ open class CloudTagView: UIView {
 
         tagViewHeight = CGFloat(yAxis + maxHeight + padding)
         if resizeToFit {
-            frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: tagViewWidth, height: tagViewHeight)
-            invalidateIntrinsicContentSize()
+            let newFrame = CGRect(x: frame.origin.x, y: frame.origin.y, width: resizeToContentWidth ? tagViewWidth : frame.width, height: tagViewHeight)
+            if newFrame != self.frame {
+                self.frame = newFrame
+                invalidateIntrinsicContentSize()
+            }
         }
     }
 
